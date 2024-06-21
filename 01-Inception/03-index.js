@@ -1,0 +1,16 @@
+// const heading = React.createElement('h1',{class:'heading'},'Hello world from React');
+
+//This is the way of creating nesting div's.
+const heading = React.createElement('div',{id:'parent'},[ 
+  React.createElement('div',{id:'child1'},[
+    React.createElement('h1',{id:'h1'},'This is h1'),
+    React.createElement('h2',{id:'h2'},'This is h2')
+  ]),
+  React.createElement('div',{id:'child2'},[
+    React.createElement('h1',{id:'h1'},'This is h1'),
+    React.createElement('h2',{id:'h2'},'This is h2')
+  ])]
+);
+
+const root = ReactDOM.createRoot(document.getElementById('root'));
+root.render(heading);

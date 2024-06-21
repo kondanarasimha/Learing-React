@@ -1,4 +1,5 @@
-// const heading = React.createElement('h1',{class:'heading'},'Hello world from React');
+import React from "react";
+import ReactDOM from "react-dom/client";
 
 //This is the way of creating nesting div's.
 const heading = React.createElement('div',{id:'parent'},[ 

@@ -1,26 +1,34 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 
-const span = <span className="span-element">This is span</span>
+const Logo = ()=> (
+  <div className="company-Logo">
+    <img className="logo" src="https://buffer.com/cdn-cgi/image/w=1000,fit=contain,q=90,f=auto/library/content/images/size/w600/2023/10/free-images.jpg" alt=""></img>
+    <h2>Click Me</h2>
+  </div>
+)
 
-const Heading = ()=> (
-<h1 id="heading">This is a JSX Element {span}</h1>
-);
+const SearchBar = ()=> (
+  <div className="input-container">
+    <input type="search" placeholder="Search"></input>
+  </div>
+)
 
-const num = 10;
-
-function testing() {
-  console.log('function got excuted')
-}
-
-const FunComponent = ()=> (
+const Profile = ()=> (
   <div>
-      <h1>{num + 10}</h1>
-      <Heading/>
-      <h1>This is Functional Component</h1>
+    <img class="logo" src="https://img.freepik.com/free-photo/smiley-man-holding-camera-front-view_23-2149915895.jpg" alt=""></img>
+  </div>
+)
+  
+
+const HeaderCompountent = ()=> (
+  <div className="main-container">
+    <Logo/>
+    <SearchBar/>
+    <Profile/>
   </div>
 );
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
 
-root.render(<FunComponent/>);
+const root = ReactDOM.createRoot(document.getElementById('root'));
+root.render(<HeaderCompountent/>);

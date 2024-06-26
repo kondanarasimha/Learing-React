@@ -60,3 +60,37 @@
    ` _<h1>Above text coming from API<h2>_`
   `)`
 - The above code accesing the data from api if the data was danger(hacking) the js will stop using are excuting the date.
+
+# Props 
+- what is props?
+- props is arugument's passing into the functional components. 
+- Syntax 
+  `const Card = (props)=> (`
+  _We can also write like this_
+  `const {name, sirname} = props` _This is destructer_
+
+      _With descurting_
+    `<h1>{name}</h1>`
+    `<h1>{sirname}</h1>`
+
+      _With out descurting_
+  `<h1>{props.name}</h1>`
+  `<h1>{props.sirname}</h1>`
+  `)`
+  _This is the way of passing aruguments into above cards as a Props_
+  `<Card key={unique value} name="Narasimha", sirName="Konda"/>`
+- Key property is more important for the functional components.
+- WHY WE NEED TO USE KEY Property? KEY Property takes the unique value to render that component.
+- EXAMPLE 
+  There is a 100 cards rendering on the page we added 101 card without key Property, the react render all from 1 to 101 will get render but already 1 to 100 cards get render we need only render 101.
+  To overcome this problem we using KEY propery, The React identify which component want to render. So the only 101 card get render.
+- DON'T GIVE INDEX AS A key Property Value, Because we can remove component and add new components the   index's get mess up it cause performance issues, Use some unique value expect index.
+- If in case there is no unique value then use index as key as a last last chance.
+
+# What is Config Driven UI?
+- config Driven UI(CDUI), This is way of configure the User InterFace(UI).
+- EXAMPLE
+  Using any food ordering app thier is some offer's based on the location. If the location is changed the offers and resturents are getting changed. 
+  To Implement this functionality into UI, we are using the Config Drive UI(configure our UI).
+  To Congfig the date was geting from the api. 
+

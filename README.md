@@ -94,3 +94,16 @@
   To Implement this functionality into UI, we are using the Config Drive UI(configure our UI).
   To Congfig the date was geting from the api. 
 
+# Q1-Can i Write React code without JSX?
+- Yes. We can write react code without using JSX(Javascript XML), using `by using createElement() method`.
+- But it hard to maintain our react code for convenience using JSX.
+
+# Q2-ES6 is Mandatory for React?
+- NO. Without ES6 features we can build React application but good to use ES6 Features.
+
+# Q3-How we write a comments in JSX.
+- /* we can write comments like this in jsx */
+
+# Q4-
+- Virtual DOM is a lightweight copy of the real DOM that allows React to manage the changes into real DOM,
+This process significantly enhances the performance of web UI.

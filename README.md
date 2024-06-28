@@ -1,5 +1,9 @@
 # REACT NOTES 
 
+# Why we Need React?
+- Already thier is a javascript, why react are any other library/farmwork? Because those library and frameworks make our devlopment easy.
+- Coming to the react it is very faster. But how? React using the virtual Dom to update the components on the Web page by using the Reconciliation, React fiber and Diff Algorithm make's React faster.
+
 # Parcel Features
 - Dev Bulid
 - Local Server
@@ -104,6 +108,49 @@
 # Q3-How we write a comments in JSX.
 - /* we can write comments like this in jsx */
 
-# Q4-
+# Q4-What is Virtual DOM.
 - Virtual DOM is a lightweight copy of the real DOM that allows React to manage the changes into real DOM,
 This process significantly enhances the performance of web UI.
+
+# Import and Export ES6-Features
+- Declartion of import and export
+- Type 1(named import) -
+  `export const name = 'Narasimha'`;
+  `import { name } from 'filename.js'`;
+  _File extension name is optional (.js)_
+- Type 2 -
+  `const name = 'Narasimha';`;
+  `export default name`;
+  _Here we declare it in two line to export;_
+  `import name from 'filename.js'`
+- Type 3
+  `const sirName = 'Konda'; `
+  `const name = 'Narasimha';`
+  `export default {sirName,name}`
+    _This way we can export hole js file_
+  `import * As fullName from 'filename.js'`
+
+# Hooks
+- Hooks is a normal javaScript functions.
+- Thier is two main types of Hooks
+- useState();
+- useEffect();
+
+# Q5- What is Reconciliation, React fiber and Diff Algorithm?
+- Reconciliation: 
+  The process of updating the interface to match the latest data(sync with the data state in our React app).
+  - Below things(react fiber,diff algorithm and state) those steps are involing in Reconciliation.
+
+- React Fiber: 
+  The modern, efficient way of performing reconciliation, allowing for smoother updates and better handling of priorities.
+  - It knows which updates are more important and tackles those first. For example, responding to a user typing is more urgent than loading data in the background. 
+
+- Diff Algorithm: 
+  - A method used within the reconciliation process to compare virtual DOMs and identify the minimal changes needed for the real DOM.
+
+
+
+
+
+
+

@@ -148,6 +148,33 @@ This process significantly enhances the performance of web UI.
 - Diff Algorithm: 
   - A method used within the reconciliation process to compare virtual DOMs and identify the minimal changes needed for the real DOM.
 
+# useEffect
+- useEffect is a hook in react, by using this hook we can make a api call.
+- useEffect will run onces the compent get render then the useEffect callback will get excuted.
+- syntax
+  `useEffect(()=> {`
+    `fectingData()`
+  `},[])`
+  - It takes the two aruguments, callback functiona and array.
+
+# What is Shimmer ?
+- Shimmer a way to improve the UX, almost all web application follow this method.
+- To get the data from api it takes some time, upto that the demo container with white are grey will display on the page.
+- onces the Data get from api the shimmer will got remove and render the original data.
+- Conditional rendering? To apply the shimmer to render on the page, we use condition to render the page onces the data get completed.
+- loading(open web page) -> Render(with Shimmer) -> Api Data -> Again render(remove the shimmer and render with Api data).
+
+# Q6 How the state variable const get changes?
+- when we use the state variable we declare with a const, but we can change the value of const variable How?
+  `const [name, setName]= UseState();`
+  `setName('new value');`
+-  when we change the value by using the state method`setName('new value')` the hole component get render and the `useState()` variable get change with new name with new value.
+- `useState()` help us to render the element when the value get change.
+
+# Q7 What is the differents between onKeyDown and onChange attributes
+- When we type any letter in a input to access that letter or string using a onKeyDown and onChange but when we use the onKeyDown the last letter will getting missed because of the state mangement timing issue of updated before the input field includes the new key press, that's why use onChange attributes.
+- syntax
+  `<input onChange={(keys)=> {keys.target.value}} placeholder="search"/>`
 
 
 

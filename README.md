@@ -180,6 +180,44 @@ This process significantly enhances the performance of web UI.
 - expression returns the value here the example `const num = 10+5` so the output is `15` other example `const nums = getNums()` it will return the some value and store into the nums because it is a function expression.
 - Coming to the Statement is a line by line instructions, Example `if(5 === num) {console.log('Not equal')}`. So here it cannot return any value.
 
+# More Details About useEffect and useState hooks.
+- useEffect and useState are coming from the react it is a javaScript functions.
+- `useEffect(()=> {console.log('useEffect')})` It has no dependency array, so it called every time of component render.
+- `useEffect(()=> {console.log('useEffect')},[])` It has a dependency array(empty), so it will call's only intial render of the component.
+- `useEffect(()=> {console.log('useEffect')},[stateVariable])` It has a dependency, so it will call only when the stateVariable get change.
+
+- `useState()` It was limited to the component, don't write statevariable outside of the components and it was top of inside component.
+- don't write the `useState()` inside the condition statements and functions.
+
+# Q9 Create a List.
+- List mean's the combition of array values as a object is know as a list.
+`const list = [{obj1},{obj2},{obj3}]`.
+
+# Creating routes in react.
+- What is a route the address of the page is know as a route, example home route "/home".
+- In react we can create routes by using `react-route` package.
+- syntax's to create a route 
+  `import {createBrowserRoute, RouterProvider}` create help us to create the route urls and RouterProvider is component will help us to config the routes.
+- Setup code 
+  `const appRoute = createBrowserRoute([{`
+  `path: '/',`
+  `element: <AppLayout/>` 
+  `}]);`
+
+  `root.render(<RouterProvider router={appRouter}/>);`
+- Implementing the error page using react router.
+  `const appRoute = createBrowserRoute([{`
+  `path: '/',`
+  `element: <AppLayout/>,`
+  `errorElement: <Error/>` 
+  `}]);`
+  - importing useRouteError hook from react router for the error message.
+    `import {useRouteError} from 'react-router-dom'`
+    `const err = useRouterError();`
+    `console.log(err);`
+
+
+
 
 
 

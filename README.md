@@ -176,6 +176,10 @@ This process significantly enhances the performance of web UI.
 - syntax
   `<input onChange={(keys)=> {keys.target.value}} placeholder="search"/>`
 
+# Q8 What is differents between expression and statement.
+- expression returns the value here the example `const num = 10+5` so the output is `15` other example `const nums = getNums()` it will return the some value and store into the nums because it is a function expression.
+- Coming to the Statement is a line by line instructions, Example `if(5 === num) {console.log('Not equal')}`. So here it cannot return any value.
+
 
 
 

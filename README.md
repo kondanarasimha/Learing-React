@@ -216,6 +216,48 @@ This process significantly enhances the performance of web UI.
     `const err = useRouterError();`
     `console.log(err);`
 
+# How to implement the child-routes.
+- UseCase of Child routes - when i need header for every page of my website(different routes) in that case, We  using child route.
+- step 1 - 
+  `import {Outlet} from 'react-router-dom'`
+- step 2 -
+  `const AppLayout = ()=> {`
+  `return(`
+  `<div className='app'>`
+    `<Header/>`
+    `<Outlet/>`
+  `</div>`
+  `)}`
+- step 3 -
+  `const appRoutes = createBrowserRoute(`
+  `[{`
+    `path: /`,
+    `Element: <AppLayout/>`,
+    `children: [{`
+      `path: '/',`
+      `Element: <Body/>`
+    `},{`
+      `path: /contact,`
+       `Element: <Contact/>`
+    `}],`
+    `errorElement: <Error />`
+  `}]`
+  `)`
+
+# We Don't want to use `href={/contact}` inside button instade of that use Link from react-router-dom.
+- syntax -
+  `import {Link} from 'react-router-dom'`
+  `<button><Link to="/contact">contact</Link><button/>`
+  `<li><Link to="/">HOME</Link></li>`
+- By using the Link the page can't re-load, It only refresh's(change) the components only.
+# - That's why the react is a single application
+
+# Types of routing
+- There is two types of routing.
+  1.client-side routing
+  2.server-side routing
+- In react we are doing client-side routing.
+- In node we bulit a server for different routes to access the resource this is server-side routing.
 
 
 

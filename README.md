@@ -337,3 +337,14 @@ This process significantly enhances the performance of web UI.
 - By using modules feature in js, we Bulit a custom hooks to reuse the code in different files (or) pages of the code.
 - Custom Hooks (or) hook is a javascript function.
 - we need to declare the Custom hook using `use` as a starting keyword.
+
+# How to Optimizing the App.
+- Normaly the all components are combined into 1 javascript file inside a browser.
+- If the file size increass the more the application get slow.
+- To avoid the slow down of our application we split our code into different files.
+- syntax
+  `import react {lazy,suspense} from 'react'`
+  `const component = lazy(()=> import('../filename'))`
+  `<suspense fallback={shimmer ui}><component/></suspense>`
+- In above code lazy load is a function coming from react, it help use to load slow to fetch the data in that files and supense is a component coming from react, it will display the data it wait till data was get.
+- Using lazy function the import should be default other wise it through error.

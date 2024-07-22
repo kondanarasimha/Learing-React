@@ -259,9 +259,81 @@ This process significantly enhances the performance of web UI.
 - In react we are doing client-side routing.
 - In node we bulit a server for different routes to access the resource this is server-side routing.
 
+# useParams Hook. 
+- It is a Hook that help us to access the params from url.
+- syntax 
+  `import {useParams} from 'react-router-dom';`
 
+# Class Based Component.
+- Class based component is component as simliar as functional component.
+- But in class base component we are using the javaScript class.
+- syntax 
+  `class componentName extend from react.Component{`
+  `render() {`
+    `return(`
+      `<div>name</div>`
+    `)}`
+  `)};`
+- To use the props in Functional Component.
+- syntax 
+  `class comonentName extend from react.Component{`
+  `constructer(props) {`
+    `super(props)`
+    `//declaring a state here`
+  `}`
+    `render() {`
+      `return(`
+        `<div>{this.props.name}</div>` `//even we can destructer it`
+      `)}`
+    `)}`
+- constructer is method use pass the arguments the super keyword help use to access the data of parent class.
+- state Hook in class based component.
+- syntax 
+  `this.state={`
+    `var1`:`value`,
+    `var2`:`value`
+  `}`
+- There is no hooks in class based components, it has some reserved keywords like state.
+- If we need to create the multiple state variables. Inside the state object need to define other property.
+- how to set the value into state in class component.
+- syntax
+  `this.setState({`var1: this.state.var1 += 1`})` If we need to update are change the other state simple add the property name and the value into setState. 
+- To access the state `this.state.propertyName`
 
+# Class Based Render Cycle.
+- Parent component have other component is know as child component.
+- Parent class are Component(get render first)
+    (first constructer will run)
+    (second render method will run)
+              |
+  child class are Component(After parent render)
+- `componentDidMount() {}` this a method to check the component get render are not, onces the component get render get sucess then the `componentDidMount() {}` will excuted.
 
+# Usecase of `componentDidMount() {}`.
+- To make a API call inside a class based component we use `componentDidMount() {}`(In functional component we use `useEffect()`).
+- The react render component fast, So onces the class component get render after that the api call make by using the `componentGetMount()` in class component.
+- `componentDidMount(){}` it was similar to the `useEffect()`.
 
+# Rendring of Multiple child class components.
+- Parent component
+  1. constructer
+  2. render
+- child 1
+  1. child 1 constructer
+  2. child 1 render
+- child 2
+  1. child 2 constructer
+  2. child 2 render
 
+- Dom Get updated
 
+- Child 1 componentGetMount will excute
+- Child 2 componentGetMount will excute
+- Parent ComponentGetMount will excute
+- This is the way of render cycle work in multiple child class source 
+ [Render Cycle Diagram](https://projects.wojtekmaj.pl/react-lifecycle-methods-diagram/ogimage.png);
+ 
+# Custom Hooks
+- By using modules feature in js, we Bulit a custom hooks to reuse the code in different files (or) pages of the code.
+- Custom Hooks (or) hook is a javascript function.
+- we need to declare the Custom hook using `use` as a starting keyword.

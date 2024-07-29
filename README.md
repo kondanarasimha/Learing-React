@@ -348,3 +348,9 @@ This process significantly enhances the performance of web UI.
   `<suspense fallback={shimmer ui}><component/></suspense>`
 - In above code lazy load is a function coming from react, it help use to load slow to fetch the data in that files and supense is a component coming from react, it will display the data it wait till data was get.
 - Using lazy function the import should be default other wise it through error.
+
+# Tailwind CSS.
+- There are many css frameWorks Like bootstrap, tailwind, material ui and etc..
+- sass, scss are Pre-processor this are the script Language used for reuse of css classes.
+- To install Tailwind css into our react in Tailwind offical documention have step by step guide(using postcss method)
+- Postcss is helping the tailwind css behind the secens.

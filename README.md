@@ -354,3 +354,13 @@ This process significantly enhances the performance of web UI.
 - sass, scss are Pre-processor this are the script Language used for reuse of css classes.
 - To install Tailwind css into our react in Tailwind offical documention have step by step guide(using postcss method)
 - Postcss is helping the tailwind css behind the secens.
+
+# What is Higher Order Component?
+- A component that takes other component and return as new component is know as higher order component (OR) Pure Function.
+
+# Controlled and UnControlled component.
+- Controlled component means the child component controlled by Parent component, Child component don't it's own state.
+- Uncontrolled component a component have it's own state it is Uncontrolled component.
+
+# What is a State lifting.
+- Passing the state variable to the child component to make a specific action.

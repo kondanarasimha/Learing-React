@@ -364,3 +364,39 @@ This process significantly enhances the performance of web UI.
 
 # What is a State lifting.
 - Passing the state variable to the child component to make a specific action.
+
+# What is React Context.
+- We are passing the data from parent component to child component by using Props, When there is nested child components it is not a good way to pass the data through a props.
+- In that case we use the Context to access the data of any child component.
+- syntax 
+  _Declaring into New File_
+  `import { createContext } from 'react';`
+  `export const UserContext = createContext({` 
+    `name: narasimha`
+  `});`
+  _To use the context values_
+  `import { useContext } from 'react';`
+  `import { UserContext } from '../files/context.js;`
+  `const contextData = useContext(UserContext)`
+  _using context in class based components_
+  - The class based components are not support the hooks, so we unable to use UseContext hook inside a class component.
+  - contexts is a component.
+  `import { UserContext } from '../files/context.js';`
+  `<UserContext.Consumer>`
+    `{(contextData)=> {`
+      `console.log(contextData);`
+    `}}`
+  `</UserContext.Consumer/>`
+  _To change the value of context_
+  - we need use the context inside a root level component(App.js).
+  `import { UserContext } from '../files/context.js';`
+  `return {`
+    `<div>`
+    `<UserContext.Provider value={{name: newName}}>` To change context value
+      `<Header />`
+      `<Outlet />`
+    `</div>`
+    `</UserContext.Provider>`
+  `}`
+  - Important Point inside userContext there is a header and outlet components, so context value was only change for those two elements only.
+  -If we rigth for one element(header) the name was changed in header only in reaming elements the context. value is default(what ever write in the context.js).

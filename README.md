@@ -1,5 +1,60 @@
 # REACT NOTES 
 
+# Setup Dev Environement using parcel.
+- npm init --y(It add's package.json file).
+
+- Add package.json file using npm.
+  `npm init` are `npm init --y`
+
+- Install parcel as a dev dependence.
+  `npm i -D parcel`
+
+- Linking the script file in html file and Create a   dev with id name of root.
+  `<div id="root"></div>`
+  `<script type="module src='file.js'></script>`
+
+- Install react and react-dom using npm.
+  `npm i react` and `npm i react-dom`
+
+- Create a root element in App.js.
+  `import React from 'react'`
+  `import React-Dom 'react-dom/client'`
+  `const root = React.CreateRoot(document.getElementbyId('root'))`
+  `root.render(<AppComponent/>)`
+- The component name should starts with Capital letter and return jsx wrap inside a div.
+
+- To start the Project in Local.
+  `npx parcel index.html`
+
+- To start the Project in Production.
+  `npx parcel bulid index.html`
+
+# Folder structer of the React App.
+- React App(main folder)
+  - parcel-cache
+  - dist
+  - node_modules
+  - .gitignore
+  - Images
+  - back-end
+  - src 
+    - components
+      - header.js
+      - body.js
+      - footer.js
+    - utiles
+      - urls.js
+    - App.js(main file)
+      - In this file we are implementing  routing.
+      - Inserting all components into 
+        root.render(`<here/>`);
+- READEME.md
+- index.html
+- index.css
+- package-lock.json
+- package.json
+
+
 # Why we Need React?
 - Already thier is a javascript, why react are any other library/farmwork? Because those library and frameworks make our devlopment easy.
 - Coming to the react it is very faster. But how? React using the virtual Dom to update the components on the Web page by using the Reconciliation, React fiber and Diff Algorithm make's React faster.
@@ -400,3 +455,54 @@ This process significantly enhances the performance of web UI.
   `}`
   - Important Point inside userContext there is a header and outlet components, so context value was only change for those two elements only.
   -If we rigth for one element(header) the name was changed in header only in reaming elements the context. value is default(what ever write in the context.js).
+
+# Redux toolkit
+- Redux is js Library for a global data mangement.
+- Redux it was more complicated to config, To overcome this Redux toolkit(RTK) was introduce.
+# STEPS TO USE REDUX TOOLKIT
+- `npm @reduxjs/toolkit`
+- `npm react-redux`
+- _To configuring need to create new file in utils_
+  `import { configureStore } from 'redux/toolkit';`
+  `import reducer from '../slice.js'`
+  `const appStore = configureStore({`
+    `reducerName: reducer`
+  `});`
+  _Inside Root component file(App.js)_
+  `import { Provider } from 'react-redux';`
+  `import { appSore } from '../file/appstore.js'`
+  `return(`
+    `<Provider store={appSore}>`
+      `<div>`
+        `<Header/>`
+        `<Outlet/>`
+      `</div>`
+    `</Provider>`
+  `)`
+- _need to create a slice need create it in new file(cartSlice.js)_
+ `import { createSlice } from '@reduxjs/toolkit'`
+  `const cartSlice = createSlice({`
+    `name: 'cart'`
+    `initalState: {items: []},` 
+    `reducers: {`
+      `addToCart: (state, action)=> {`
+        `state.items.push(action.payload)`
+        `},`
+        `removeCart: (state, action)=> {`
+          `state.items.pop()`
+        `}`
+    `}`
+  `})`
+  `export default createSlice.reduce`
+  `export const { addToCart, removeCart } = cartSlice.reducers`
+- _To access the data_
+  - accessing the cart items data.
+  `import { useSelector } from 'react-redux';`
+  `const cartItems = useSelector((store)=> store.cart.items);`
+- _To add Data into reducer function_
+  `import { useDispatch } from "react-redux";`
+  `import { addItems } from "../utiles/cartSlice.js";`
+  `const dispatch = useDispatch();` 
+  `const addBtnHandler = (item)=> {`
+    `dispatch(addItems(item))`
+  `};`

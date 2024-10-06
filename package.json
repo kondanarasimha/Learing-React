@@ -20,5 +20,7 @@
   },
   "browserslist": [
     "last 2 version"
-  ]
+  ],
+  "main": "index.js",
+  "keywords": []
 }
